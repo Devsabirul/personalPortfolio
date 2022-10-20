@@ -19,7 +19,8 @@
         <p class="hero-subtitle"> i'm a <span class="typed"
             data-typed-items="{{hero.t1}},{{hero.t2}},{{hero.t3}},{{hero.t4}}"></span>
         </p>
-        <a href="{{hero.cv.url}}" class="btn btn-outline-primary cv_ mt-4 "><i class="fa-solid fa-download"></i>
+        <a href="https://drive.google.com/file/d/1LyG4I2Y1xjtu-AfhAXp0o-QlIytafOmS/view?usp=sharing"
+          class="btn btn-outline-primary cv_ mt-4" target="_blank"><i class="fa-solid fa-download"></i>
           DOWNLOAD CV</a>
       </div>
     </div>
@@ -194,43 +195,43 @@
               Portfolio
             </h3>
             {% for subtitle in portfolio %}
-              <p class="subtitle-a">
-                {{subtitle.description}}
-              </p>
+            <p class="subtitle-a">
+              {{subtitle.description}}
+            </p>
             {% endfor %}
-              <div class="line-mf"></div>
-            </div>
+            <div class="line-mf"></div>
           </div>
         </div>
-        <div class="row">
-          {% for item in portfolio_list %}
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="{{item.Picture.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="{{item.Picture.url}}" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">{{item.title}}</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">{{item.category}}</span> / <span class="w-date">{{item.date}}</span>
-                    </div>
+      </div>
+      <div class="row">
+        {% for item in portfolio_list %}
+        <div class="col-md-4">
+          <div class="work-box">
+            <a href="{{item.Picture.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <div class="work-img">
+                <img src="{{item.Picture.url}}" alt="" class="img-fluid">
+              </div>
+            </a>
+            <div class="work-content">
+              <div class="row">
+                <div class="col-sm-8">
+                  <h2 class="w-title">{{item.title}}</h2>
+                  <div class="w-more">
+                    <span class="w-ctegory">{{item.category}}</span> / <span class="w-date">{{item.date}}</span>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="{% url 'portfolio_single_page' item.slug %}"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="w-like">
+                    <a href="{% url 'portfolio_single_page' item.slug %}"> <span class="bi bi-plus-circle"></span></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {% endfor %}
         </div>
+        {% endfor %}
       </div>
+    </div>
   </section><!-- End Portfolio Section -->
 
   <!-- ======= Testimonials Section ======= -->
