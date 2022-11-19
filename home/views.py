@@ -37,8 +37,6 @@ def home(request):
     for i in blog_list:
         blog_slice_title.append(i.title[0:29])
         blog_slice_description.append(i.description[0:140])
-
-    print(blog_slice_title)
     return render(request, 'home/index.html', context)
 
 

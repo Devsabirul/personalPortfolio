@@ -1,5 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -93,7 +94,7 @@ class Blog(models.Model):
 class Blog_item(models.Model):
     title = models.CharField(max_length=100)
     slug = AutoSlugField(populate_from="title", null=True, unique=True)
-    description = models.TextField()
+    description = RichTextField()
     Picture = models.ImageField(upload_to="images/")
     category = models.CharField(max_length=100)
     author = models.CharField(max_length=100, null=True)
