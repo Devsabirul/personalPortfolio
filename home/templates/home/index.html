@@ -292,7 +292,7 @@
         <div class="col-md-4">
           <div class="card card-blog">
             <div class="card-img">
-              <a href="blog-single.html"><img src="{{item.Picture.url}}" alt="" class="img-fluid"></a>
+              <a href="{% url 'blog_single_page' item.slug %}"><img src="{{item.Picture.url}}" alt="" class="img-fluid"></a>
             </div>
             <div class="card-body">
               <div class="card-category-box">
