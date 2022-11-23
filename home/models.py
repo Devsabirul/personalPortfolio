@@ -24,7 +24,7 @@ class About(models.Model):
     profile = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
-    about_me = models.TextField()
+    about_me = RichTextField()
     photo = models.ImageField(upload_to="images/")
     logo = models.ImageField(upload_to="images/", null=True)
     location = models.CharField(max_length=100)
