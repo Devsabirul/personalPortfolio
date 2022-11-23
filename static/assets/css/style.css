@@ -1514,3 +1514,14 @@ footer .credits {
 footer .credits a {
   color: #fff;
 }
+
+
+/* manualy added  */
+.video_wrap {
+  width: 100%;
+  height: 500px;
+}
+div#swiper-wrapper-41fc1eff9adb6584 {
+  width: 100%;
+  height: 500px;
+}

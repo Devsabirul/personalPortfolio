@@ -1,8 +1,8 @@
 from django.db import models
 from autoslug import AutoSlugField
 from ckeditor.fields import RichTextField
-
-# Create your models here.
+# for video
+from embed_video.fields import EmbedVideoField
 
 
 class Hero(models.Model):
@@ -76,9 +76,11 @@ class Portfolio_item(models.Model):
     url = models.CharField(max_length=100, null=True)
     project_client = models.CharField(max_length=100, null=True)
     date = models.DateTimeField(auto_now=True)
-    slider_one = models.ImageField(upload_to="images/", null=True)
-    slider_two = models.ImageField(upload_to="images/", null=True)
-    slider_three = models.ImageField(upload_to="images/", null=True)
+    video = EmbedVideoField(null=True, blank=True)
+    slider_one = models.ImageField(upload_to="images/", null=True, blank=True)
+    slider_two = models.ImageField(upload_to="images/", null=True, blank=True)
+    slider_three = models.ImageField(
+        upload_to="images/", null=True, blank=True)
 
     def __str__(self):
         return self.title

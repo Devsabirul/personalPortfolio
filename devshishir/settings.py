@@ -32,7 +32,8 @@ INSTALLED_APPS = [
     'home',
     'dashboard',
     'login',
-    'ckeditor'
+    'ckeditor',
+    'embed_video'  # this is for Video embed
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,14 @@ STATICFILES_DIRS = [
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

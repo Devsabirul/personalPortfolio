@@ -207,7 +207,7 @@
         {% for item in portfolio_list %}
         <div class="col-md-4">
           <div class="work-box">
-            <a href="{{item.Picture.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox">
+            <a href="{% url 'portfolio_single_page' item.slug %}" >
               <div class="work-img">
                 <img src="{{item.Picture.url}}" alt="" class="img-fluid">
               </div>

@@ -1,5 +1,6 @@
 {% extends "base/base.html" %}
 {% load static %}
+{% load embed_video_tags %}
 {% block title %}Portfolio Details{% endblock title %}
 {% block logo %}
 {% for about in about %}
@@ -12,7 +13,7 @@
 {% endfor %}
 {% endblock copyright_name %}
 {% block body %}
-<div class="hero hero-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+<div class="hero hero-single route bg-image" style="background-image: url({% static 'assets/img/overlay-bg.jpg' %})">
   <div class="overlay-mf"></div>
   <div class="hero-content display-table">
     <div class="table-cell">
@@ -40,7 +41,16 @@
         <div class="col-lg-8">
           <div class="portfolio-details-slider swiper">
             <div class="swiper-wrapper align-items-center">
-
+              <div class="swiper-slide">
+                <div class="video_wrap">
+                  {% comment %}  {% endcomment %}
+                  {% if portfolio.video|length > 0 %}
+                    {% video portfolio.video '100% x 100%' %}
+                  {% else %}
+                    <p style="border:1px solid gray;width: 100%;height:100%; text-align:center;line-height:50px;">Can't play this video</p>
+                  {% endif %}
+                </div>
+              </div>
               <div class="swiper-slide">
                 <img src="{{portfolio.slider_one.url}}" alt="">
               </div>
